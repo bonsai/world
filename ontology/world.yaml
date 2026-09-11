@@ -1,0 +1,75 @@
+# World Ontology
+# Seven primitives for describing the World.
+
+ontology:
+  name: World
+  version: "0.1.0"
+  principle: "The World becomes knowable by becoming distinguishable."
+
+primitives:
+  - id: subject
+    label: Subject
+    ja: 主体
+    definition: 動けるもの
+    role: "Can act, affect, and change state."
+
+  - id: object
+    label: Object
+    ja: 対象
+    definition: 動けないもの
+    role: "Is acted upon or serves as an object of action."
+
+  - id: environment
+    label: Environment
+    ja: 環境
+    definition: あるもの
+    role: "The field and conditions in which subjects and objects exist."
+
+  - id: situation
+    label: Situation
+    ja: 状況
+    definition: 変わるもの
+    role: "The state and arrangement of the World at a given point in time."
+
+  - id: event
+    label: Event
+    ja: イベント
+    definition: 起こるもの
+    role: "An occurrence that changes or constitutes a situation."
+
+  - id: language
+    label: Language
+    ja: 言語記号
+    definition: 記述するもの
+    role: "Symbols and structures used to describe, distinguish, and give meaning to the World."
+
+  - id: data
+    label: Data
+    ja: データ
+    definition: 観測され得るもの
+    role: "Observable records such as numbers, text, images, measurements, and other signals."
+
+relations:
+  - subject -> object: action
+  - subject -> environment: interaction
+  - event -> situation: change
+  - situation -> data: observation
+  - data -> language: description
+  - language -> concept: symbolization
+
+cycle:
+  - Environment
+  - Subject
+  - Action
+  - Object
+  - Event
+  - Situation
+  - Data
+  - Language
+  - Environment
+
+notes:
+  - "Subject and Object are relational roles, not necessarily absolute ontological categories."
+  - "Event is an occurrence; Situation is the resulting or current state."
+  - "Data and Language are distinct: Data concerns observability, Language concerns description and symbolization."
+  - "The seven primitives are intentionally minimal and should not be expanded without architectural necessity."
