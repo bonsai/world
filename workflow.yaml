@@ -1,0 +1,48 @@
+name: world-evaluation
+version: 1
+intent: Evaluate and evolve the canonical World model
+
+source:
+  repo: bonsai/world
+  files:
+    - world.json
+    - world.sqlite
+    - world.sqlite.sql
+    - 論理哲学論考.json
+
+flow:
+  - intent
+  - domain
+  - source
+  - storage
+  - dataset
+  - plan
+  - bqmlite-go
+  - evidence
+  - proposal
+  - governance
+  - world
+
+execution:
+  engine:
+    repo: bonsai/bqmlite-go
+    role: deterministic evaluation and reproducible scoring
+
+inputs:
+  canonical: world.json
+  database: world.sqlite
+  schema: world.sqlite.sql
+  comparative: 論理哲学論考.json
+
+outputs:
+  - result
+  - fingerprint
+  - evidence
+  - proposal
+
+promotion:
+  target: bonsai/world
+  automatic: false
+  rule: Governance must explicitly promote proposals to canonical decisions.
+
+principle: World is canonical; bqmlite-go evaluates; Governance decides.
