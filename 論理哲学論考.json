@@ -1,0 +1,46 @@
+{
+  "name": "Tractatus Logico-Philosophicus",
+  "ja": "論理哲学論考",
+  "author": "Ludwig Wittgenstein",
+  "thesis": "The world is the totality of facts, not of things.",
+  "structure": {
+    "1": "The world is everything that is the case.",
+    "2": "What is the case—a fact—is the existence of states of affairs.",
+    "3": "A logical picture of facts is a thought.",
+    "4": "A thought is a proposition with a sense.",
+    "5": "A proposition is a truth-function of elementary propositions.",
+    "6": "The general form of a truth-function is the general form of a proposition.",
+    "7": "Whereof one cannot speak, thereof one must be silent."
+  },
+  "ontology": [
+    "world",
+    "fact",
+    "state_of_affairs",
+    "object",
+    "logical_picture",
+    "thought",
+    "proposition",
+    "elementary_proposition",
+    "truth_function",
+    "logic",
+    "sense",
+    "language",
+    "form"
+  ],
+  "relations": [
+    "world_contains_facts",
+    "fact_is_existence_of_state_of_affairs",
+    "state_of_affairs_is_combination_of_objects",
+    "thought_is_logical_picture",
+    "proposition_expresses_thought",
+    "elementary_propositions_combine_into_truth_functions",
+    "language_shares_logical_form_with_world",
+    "logic_sets_the_form_of_possible_description"
+  ],
+  "limit": {
+    "language": "The limits of my language mean the limits of my world.",
+    "unsayable": "What lies beyond the limits of meaningful proposition is not represented as a fact."
+  },
+  "method": "Analyze the world into facts, facts into states of affairs, and propositions into their logical form.",
+  "source_note": "This JSON is a structural paraphrase of the Tractatus, not a transcription or translation of the complete text."
+}
