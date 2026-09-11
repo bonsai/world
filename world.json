@@ -1,0 +1,41 @@
+{
+  "name": "World",
+  "thesis": "The World becomes knowable by becoming distinguishable.",
+  "genesis": {
+    "starting_state": "undivided_unknown",
+    "sequence": [
+      "sensor_perceives_difference",
+      "world_separates",
+      "many_emerge_from_one",
+      "observable_emerges_from_hidden",
+      "signal_emerges_from_noise",
+      "relations_emerge_between_separate_things",
+      "patterns_emerge",
+      "patterns_are_named",
+      "domains_take_form",
+      "world_becomes_knowable"
+    ]
+  },
+  "core": {
+    "same": "what cannot yet be distinguished",
+    "difference": "what can be distinguished",
+    "distinction": "a recognized difference",
+    "relation": "a connection between distinctions",
+    "pattern": "recurring relations",
+    "concept": "a symbolized pattern",
+    "domain": "a layer of the World defined by concepts",
+    "sensor": "a means of perceiving the World",
+    "negentropy": "measurable growth of order and distinguishability"
+  },
+  "ontology": [
+    "same",
+    "difference",
+    "distinction",
+    "relation",
+    "pattern",
+    "concept",
+    "domain",
+    "sensor",
+    "negentropy"
+  ]
+}
