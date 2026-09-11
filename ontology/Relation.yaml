@@ -1,0 +1,186 @@
+# Relation
+# A Relation connects two or more distinguishable elements of the World.
+# It expresses how entities, situations, events, environments, language, or data
+# are connected without requiring the relation itself to be a Subject.
+
+name: Relation
+version: "0.1"
+
+purpose: >-
+  Define the primitive connection through which distinctions in the World
+  become related, forming patterns and enabling descriptions of structure,
+  change, and interaction.
+
+definition: >-
+  A Relation is a distinguishable connection between a source and a target.
+  The relation may be directional or non-directional, static or temporal,
+  and may itself be observed or described.
+
+position_in_world:
+  layer: foundational
+  connects:
+    - Subject
+    - Object
+    - Environment
+    - Situation
+    - Event
+    - Language
+    - Data
+
+core_model:
+  source: required
+  relation: required
+  target: required
+
+fields:
+  id:
+    type: identifier
+    required: true
+    description: Unique identifier of the relation instance.
+
+  source:
+    type: reference
+    required: true
+    description: The element from which the relation originates.
+
+  type:
+    type: concept
+    required: true
+    description: The meaning or kind of connection.
+
+  target:
+    type: reference
+    required: true
+    description: The element connected by the relation.
+
+  direction:
+    type: enum
+    required: false
+    values:
+      - directed
+      - undirected
+    default: directed
+
+  context:
+    type: reference
+    required: false
+    description: Environment or Situation in which the relation holds.
+
+  temporal:
+    type: object
+    required: false
+    fields:
+      valid_from: timestamp
+      valid_to: timestamp
+
+  provenance:
+    type: reference
+    required: false
+    description: Observation, Event, Data, or source from which the relation is known.
+
+  confidence:
+    type: number
+    required: false
+    range: [0.0, 1.0]
+
+principles:
+  - A Relation connects distinguishable elements.
+  - A Relation is distinct from the elements it connects.
+  - A Relation may connect any World primitives when the connection is meaningful.
+  - Direction must not be assumed when the relation is inherently symmetric.
+  - A relation may change with Situation or Event.
+  - A relation may be observed as Data and represented through Language.
+  - A Relation does not imply that either endpoint is a Subject.
+  - A Subject may create, change, or remove a Relation through Action.
+
+relation_families:
+  structural:
+    description: Relations describing composition, identity, similarity, or distinction.
+    examples:
+      - same_as
+      - different_from
+      - part_of
+      - contains
+      - similar_to
+
+spatial:
+    description: Relations describing spatial configuration.
+    examples:
+      - near
+      - inside
+      - adjacent_to
+      - connected_to
+
+social:
+    description: Relations between Subjects or social structures.
+    examples:
+      - knows
+      - collaborates_with
+      - owns
+      - governs
+      - exchanges_with
+
+actional:
+    description: Relations created or modified through an action.
+    examples:
+      - acts_on
+      - creates
+      - modifies
+      - observes
+      - communicates_with
+
+temporal:
+    description: Relations describing temporal ordering or dependence.
+    examples:
+      - before
+      - after
+      - during
+      - causes
+      - enables
+
+semantic:
+    description: Relations connecting concepts, language, and meanings.
+    examples:
+      - denotes
+      - describes
+      - means
+      - classifies
+
+observational:
+    description: Relations between a World element and its observation or representation.
+    examples:
+      - observed_as
+      - measured_by
+      - represented_by
+      - recorded_as
+
+world_cycle:
+  - Subject
+  - Action
+  - Relation
+  - Situation
+  - Event
+  - Data
+  - Language
+  - Relation
+
+triple_form:
+  notation: "source -> relation -> target"
+  rdf_compatible: true
+  note: >-
+    This follows the general subject-predicate-object pattern used by RDF,
+    while keeping Relation as the World ontology's conceptual primitive.
+
+examples:
+  - source: human:alice
+    type: observes
+    target: object:building
+  - source: subject:agent_a
+    type: acts_on
+    target: object:door
+  - source: building:a
+    type: located_in
+    target: environment:tokyo
+  - source: situation:s1
+    type: followed_by
+    target: event:e1
